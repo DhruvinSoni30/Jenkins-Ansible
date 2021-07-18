@@ -4,11 +4,11 @@
   tasks:
     - name: Install Apache WebServer
       yum:
-        name: httpd
+        name: apache2
         state: present
     - name: Start Apache WebServer
       service:
-        name: httpd
+        name: apache2
         state: started
         enabled: True
     - name: Deploy Static Websitte
