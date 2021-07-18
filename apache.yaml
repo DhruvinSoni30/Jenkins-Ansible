@@ -15,3 +15,9 @@
       copy:
         src: index.html
         dest: /var/www/html/
+     
+    - name: Install Nginx
+      yum:
+        name: nginx
+        state: installed
+        update_cache: True
