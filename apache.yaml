@@ -1,0 +1,19 @@
+---
+- hosts: webserver
+  become: true
+  tasks:
+    - name: Install Apache WebServer
+      yum:
+        name: httpd
+        state: present
+    - name: Start Apache WebServer
+      service:
+        name: httpd
+        state: started
+        enabled: True
+    - name: Deploy Static Websitte
+      copy:
+        src: index.html
+        dest: /var/www/html/
+    
+        
